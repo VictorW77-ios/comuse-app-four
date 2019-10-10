@@ -31,6 +31,7 @@ The application we build in the project build is an "Artist Portfolio App". **Us
   - Associations
 - [x] 8. Test your models and associations in the console
   - Create some seed data
+  - Tested our associations in `tux`
   - Adjust migrations as needed
 
 ### PART 2 — User Authentication: Login + Sign Up
@@ -43,14 +44,14 @@ The application we build in the project build is an "Artist Portfolio App". **Us
 
 **START WITH LOGIN**
 
-- [ ] 9. Create your `UsersController`
+- [x] 9. Create your `UsersController`
   - Mount new controller in `config.ru` with `use UsersController` (Why do we add this?)
 
-- [ ] 10. Enable `sessions` in `ApplicationController`
+- [x] 10. Enable `sessions` in `ApplicationController`
     - Enable sessions
     - Create session secret
 
-- [ ] 11. Build routes and views for login
+- [x] 11. Build routes and views for login
   - Build your `get` login route + "login" view
   - Build your `post` login route
       - **Tip**: Here is where we authenticate the user and leverage the session hash to log them in!
