@@ -57,7 +57,7 @@ The application we build in the project build is an "Artist Portfolio App". **Us
       - **Tip**: Here is where we authenticate the user and leverage the session hash to log them in!
   - Build your `get users/:id` route + "show" view
 
-- [ ] 12. Create your `ApplicationController` helper methods
+- [x] 12. Create your `ApplicationController` helper methods
   - **Ask**: Why do we add this?
   - `#logged_in?`: checks if the user is logged in
   - `#current_user`: keeps track of the user currently logged in
