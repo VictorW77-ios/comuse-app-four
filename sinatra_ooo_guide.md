@@ -63,12 +63,12 @@ The application we build in the project build is an "Artist Portfolio App". **Us
   - `#current_user`: keeps track of the user currently logged in
 
 **MOVE ON TO SIGN UP**
-- [ ] 13. Build routes and views for signup
+- [x] 13. Build routes and views for signup
   - Build your `get` signup route + "signup" view
   - Build your `post` signup route
 
 **WRAP UP WITH LOG OUT**
-- [ ] 14. Build your `get` logout route
+- [x] 14. Build your `get` logout route
 
 ### PART 3 — CRUD: Create, Read, Update, Delete
 

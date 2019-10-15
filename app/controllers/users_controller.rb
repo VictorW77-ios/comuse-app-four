@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   # render login form
   get "/login" do
-    erb :login
+    erb :'users/login'
   end
 
   # recieve the data (params) from the login form

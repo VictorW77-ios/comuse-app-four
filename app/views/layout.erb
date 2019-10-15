@@ -14,7 +14,16 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
     <div class="wrapper">
+
+      <div class="nav">
+        <% if logged_in? %>
+          <a href="/">All Posts</a>
+          <a href="/">Create a Post</a>
+          <a href="/logout">Log Out</a>
+        <% end %>
+      </div>
 
         <%= yield %>
 
