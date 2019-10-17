@@ -76,11 +76,11 @@ The application we build in the project build is an "Artist Portfolio App". **Us
   - Mount new controller in `config.ru` with `use PostsController`
   - **Ask**: Why do we add this? ^
 
-- [ ] 16. Implement READ functionality
+- [x] 16. Implement READ functionality
   - Create `get` posts route
   - Create a view for displaying all posts
 
-- [ ] 17. Implement CREATE functionality
+- [x] 17. Implement CREATE functionality
   - Create `get` posts route and view to render form
   - Create `post` route to create new post
 
