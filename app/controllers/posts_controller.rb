@@ -14,15 +14,31 @@ class PostsController < ApplicationController
   # CREATE
   # render a form to create a new post
   get "/posts/new" do
-    erb :"posts/new"
+    if logged_in?
+      erb :"posts/new"
+    else
+      # show the error message
+      flash[:error] = "You must be logged in to create a post!"
+      redirect "/"
+    end
   end
 
   # need another route for create
   post "/posts" do
     # recieve the params that the user input in the create new post form
-    post = Post.create(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id)
-    # redirect to the post show page
-    redirect "/posts/#{post.id}"
+    post = Post.new(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id)
+    if post.save
+    # ^ if valid input — .save triggers our validation
+    #if params[:title] != "" && params[:description] != "" && params[:image_url] != ""
+      # show post creation success message
+      flash[:message] = "Created post successfully!"
+      # redirect to the post show page
+      redirect "/posts/#{post.id}"
+    else
+      # show post creation error message
+      flash[:error] = "Post creation failed: #{post.errors.full_messages.to_sentence}"
+      redirect "/posts/new"
+    end
   end
 
   # ORDER MATTERS
@@ -41,7 +57,13 @@ class PostsController < ApplicationController
   # get route to render a edit form
   get '/posts/:id/edit' do
     @post = Post.find(params[:id])
-    erb :'/posts/edit'
+    if authorized_to_edit?(@post)
+      erb :'/posts/edit'
+    else
+      # show an error message
+      flash[:error] = "Not authorized to edit that post!"
+      redirect "/posts"
+    end
   end
 
   # `use Rack::MethodOverride` in `config.ru`

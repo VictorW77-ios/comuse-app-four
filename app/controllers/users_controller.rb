@@ -13,10 +13,15 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       # creating a key/value pair in the session hash using the users id to actually log them in
       session[:user_id] = user.id
+      # add a success message to the flash hash
+      flash[:message] = "Welcome back #{user.name}"
       # redirect user's profile (users show)
       redirect "/users/#{user.id}"
     else
       # show an error message
+      flash[:error] = "Your credentials were invalid. Try again!"
+      # redirecting back to the login page
+      # this is where my error message with will display (at the login route)
       redirect '/login'
     end
   end
