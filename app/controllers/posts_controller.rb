@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     erb :"/posts/show"
   end
 
-  # HOMEWORK
+  # CREATE
 
   # UPDATE
   # create link to edit form on post show page
@@ -75,13 +75,4 @@ class PostsController < ApplicationController
   end
 
   # DELETE
-  # create link to delete on post show page
-  # `use Rack::MethodOverride` in `config.ru`
-  # delete route to delete our post
-  delete '/posts/:id' do
-  # we need the id to FIND the post to delete
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect '/posts'
-  end
 end
